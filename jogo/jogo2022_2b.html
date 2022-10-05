@@ -1,0 +1,363 @@
+<!DOCTYPE >
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cringe Slayers</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" href="./icon.jpg">
+    </head>
+	<body>
+		<div class ="whole">
+		<div class="fundo" id="fundo">
+		<div id="div2" class="cumida winner" >
+		</div>
+		<div id="div1" class="winner">
+		</div>
+		<div class="winner" id="winner">YOU WON!<br>CONGRATS!!!</div>
+		<div class="winner" id="loser">YOU LOST!</div>
+		<button type="button"  id="start" class="">Start</button>
+		<div id="inst" class="">Destroy 1000 cringes before the time runs out!</div>
+	</div>
+	<div class="painel">
+		<div class="pontos1">Points: </div>
+		<div class="pontos">0</div>
+		<div class="time1">Time:</div>
+		<div id="time">0</div>
+			<hr>
+			<button type="button"  id="acima" class="direct">⬆</button><br>
+			<button type="button"  id="esquerda" class="direct">⬅</button>
+			<button type="button"  id="direita" class="direct">➡</button><br>
+			<button type="button"  id="baixo" class="direct">⬇</button><hr>
+			<button type="button"  id="cor" class="character">Change Character</button>
+			<hr>
+		
+	</div>
+	</div>
+		<script>
+			function updateText (element, string) {
+				element.innerHTML = string.toString();
+			}
+
+			function moverdireita(){
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+
+				div2.style.left = div2Left;
+				if ( div2Left >=  fundoWidth - div2Width){
+					clearInterval(m);
+					m = setInterval ("moveresquerda()",15);
+				}
+			}
+			function moveresquerda(){
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+
+				div2.style.left = div2Left;
+				if ( div2Left <= 0){
+					clearInterval(m);
+					m = setInterval ("moverdireita()",15);
+				}
+			}
+
+            // Mover cursor 1  - através dos botões
+			function move(Direcao) {
+				if (contador != 0) {
+					para();
+				}
+				if (Direcao == "direita") {
+					timer = setInterval("direita()",0.1);
+					contador ++;
+				}
+
+				if (Direcao == "esquerda") {
+					timer = setInterval("esquerda()",0.1);
+					contador ++;
+				}
+
+				if (Direcao == "acima") {
+					timer = setInterval("acima()",0.1);
+					contador ++;
+				}
+
+				if (Direcao == "baixo") {
+					timer = setInterval("baixo()",0.1);
+					contador ++;
+				}
+			}
+
+
+            function direita() {
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				let div1Width= parseInt(getComputedStyle(div1).width);
+
+				div1.style.left = div1Left+7;
+				if ( div1Left >= fundoWidth  - div1Width-7){
+					clearInterval(timer);
+					timer = setInterval ("esquerda()",45);
+				}
+			}
+
+			function esquerda() {
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				
+				div1.style.left = div1Left-7;
+				if ( div1Left <= 20){
+					clearInterval(timer);
+					timer = setInterval ("direita()",45);
+				}
+			}
+
+			function baixo() {
+				let div1Top= parseInt(getComputedStyle(div1).top);
+				let fundoHeight= parseInt(getComputedStyle(fundo).height);
+				let div1Height= parseInt(getComputedStyle(div1).height);
+
+				div1.style.top = div1Top+7;
+				if(div1Top >= fundoHeight - div1Height-10){
+					clearInterval(timer);
+				timer = setInterval("acima()",45);
+			    }
+			}
+			function acima() {
+				let div1Top= parseInt(getComputedStyle(div1).top);
+
+				div1.style.top = div1Top-7;
+				if(div1Top <= 20 ){
+				clearInterval(timer);
+				timer = setInterval("baixo()",45);
+				}
+			}
+			function para() {
+				clearInterval(timer);
+			}
+			let waternoose = 0
+			function cor(){
+				waternoose = (Math.ceil(Math.random()*1000));
+				if(waternoose!=1){
+			if(cont == 0){
+				wmt.pause();
+				wmt.currentTime=0;
+				mt.pause();
+				mt.currentTime=0;
+				div1.style.backgroundImage="url(./monsoon.jpeg)";
+				mt1.play();
+				cont++;
+			}else{
+				if(cont == 1){
+					wmt.pause();
+				wmt.currentTime=0;
+					mt1.pause();
+					mt1.currentTime=0;
+					div1.style.backgroundImage="url(./sam.jpeg)";
+					mt2.play();
+					cont++;
+		   	    }else{
+		   	    if(cont == 2){
+					wmt.pause();
+				wmt.currentTime=0;
+				div1.style.backgroundImage="url(./ArmstrongPortrait.webp)";
+					mt2.pause();
+					mt2.currentTime=0;pontuacao
+				    cont = 0;
+		        	}
+		        }
+			}
+		}
+			if(waternoose==1){
+					div1.style.backgroundImage="url(./waternoose.jpeg)";
+					mt.pause();
+				mt.currentTime=0;
+				mt1.pause();
+					mt1.currentTime=0;
+				mt2.pause();
+					mt2.currentTime=0;
+					wmt.play();
+					cont=2;
+				}
+				return waternoose;
+		    }
+			let win = document.querySelector("#winner");
+			let lose = document.querySelector("#loser");
+			function eat(){
+				kill.play();
+				if(kill.currentTime>0){
+				kill.currentTime=0;
+				}
+				if(pontuacao<999){
+				let wate = waternoose;
+					let lef = Math.ceil(Math.random()*30)+"vw";
+					let to = Math.ceil(Math.random()*70)+"vw";
+					let cringe = Math.ceil(Math.random()*4);
+					document.querySelector(".cumida").remove();
+					const food = document.createElement("div");
+					document.querySelector(".fundo").appendChild(food);
+					food.className = "cumida";
+					food.id="div2";
+					if (wate!=1){
+					if(cringe==4){
+						div2.style.backgroundImage = "url(./c4.jpeg)";
+					}
+					if(cringe==1){
+						div2.style.backgroundImage = "url(./c1.jpeg)";
+					}
+					if(cringe==2){
+						div2.style.backgroundImage = "url(./c2.jpeg)";
+					}
+					if(cringe==3){
+						div2.style.backgroundImage = "url(./c3.jpeg)";
+					}
+					}
+					if (wate==1){
+						if(cringe==4){
+						div2.style.backgroundImage = "url(./k4.jpeg)";
+					}
+					if(cringe==1){
+						div2.style.backgroundImage = "url(./k1.jpeg)";
+					}
+					if(cringe==2){
+						div2.style.backgroundImage = "url(./k2.jpeg)";
+					}
+					if(cringe==3){
+						div2.style.backgroundImage = "url(./k3.jpeg)";
+					}
+					}
+					div2.style.top = lef;
+					div2.style.left = to;
+					pontuacao++;
+					updateText(pnts, pontuacao);
+					}
+					else{
+						win.className="";
+						div1.className = "winner";
+						div2.className = "winner";
+						clearInterval(n);
+						pontuacao++;
+						updateText(pnts, pontuacao);
+						mt.pause();
+						mt1.pause();
+						mt2.pause();
+						wmt.pause();
+						winnerson.play();
+						winnerson.currentTime=1;
+						if(waternoose!=1){
+						if(cont==0){
+						document.querySelector(".fundo").style.backgroundImage = "url(./winner.jpeg)"
+						document.querySelector(".fundo").style.backgroundSize = "cover"
+						}
+						if(cont==1){
+						document.querySelector(".fundo").style.backgroundImage = "url(./winner1.jpeg)"
+						document.querySelector(".fundo").style.backgroundSize = "cover"
+						}
+						if(cont==2){
+						document.querySelector(".fundo").style.backgroundImage = "url(./winner2.jpeg)"
+						document.querySelector(".fundo").style.backgroundSize = "cover"
+						}
+						}
+						else{
+							document.querySelector(".fundo").style.backgroundImage = "url(./winnerw.jpeg)"
+						}
+						clearInterval(end);
+					}
+				}
+				function colisao(){
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				let div1Top= parseInt(getComputedStyle(div1).top);
+				let div1Height= parseInt(getComputedStyle(div1).height);
+				let div1Width= parseInt(getComputedStyle(div1).width);
+
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let div2Top= parseInt(getComputedStyle(div2).top);
+				let div2Height= parseInt(getComputedStyle(div2).height);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+				
+				let fundoHeight= parseInt(getComputedStyle(fundo).height);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+
+
+
+					if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&
+						((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
+							eat();
+					}
+					if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&
+						((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
+							eat();
+					}
+				}
+				function start(){
+					document.querySelector("#start").className="winner";
+					document.querySelector("#inst").className="winner";
+					mt.play();
+					div1.classList.remove("winner");
+					div2.classList.remove("winner");
+					end = setInterval("finish(end)",1000);
+				}
+				function finish(intervalo) {
+					tempo--;
+					if (tempo == 0) {
+						lose.className="";
+						div1.className = "winner";
+						div2.className = "winner";
+						clearInterval(n);
+						clearInterval(intervalo);
+						if(waternoose!=1){
+						if(cont==0){
+						document.querySelector(".fundo").style.backgroundImage = "url(./loser.png)"
+						}
+						if(cont==2){
+						document.querySelector(".fundo").style.backgroundImage = "url(./loser1.jpeg)"
+						}
+						if(cont==1){
+						document.querySelector(".fundo").style.backgroundImage = "url(./loser2.jpg)"
+						document.querySelector(".fundo").style.backgroundSize = "cover"
+						}
+						}
+						else{
+							document.querySelector(".fundo").style.backgroundImage = "url(./loserw.webp)"
+						}
+						mt.pause();
+						mt1.pause();
+						mt2.pause();
+						wmt.pause();
+						sadstreamsam.play();
+					}
+					updateText(tempohtml, tempo.toString());
+				}
+            //Ao carregar a página estas linhas são executadas.
+				let mt = new Audio ("./ihtbtw.mp3");
+				mt.loop = true;
+				let mt1 = new Audio("./soft.mp3");
+				mt1.loop = true;
+				let mt2 = new Audio("./totikfr.mp3");
+				mt2.loop = true;
+				let wmt = new Audio("./miwt.mp3");
+				wmt.loop = true;
+				let kill = new Audio("./death.wav");
+				let sadstreamsam = new Audio ("./youloser.mp3")
+				sadstreamsam.loop = true;
+				let winnerson = new Audio("./youwin.mp3")
+				winnerson.loop=true;
+			const pnts = document.querySelector(".pontos");
+			let pontuacao = 0;
+			let contador = 0;
+            let cont = 0;
+			let tempo = 60 * 10;
+			let end;
+			const tempohtml = document.getElementById("time");
+			//Funções que são chamadas a cada 15 e 5 milisegundos
+			let n = setInterval("colisao()", 10);
+			document.querySelector("#start").addEventListener("click", ()=>{start()});
+            document.querySelector("#acima").addEventListener("click", ()=>{move('acima')});
+            document.querySelector("#esquerda").addEventListener("click",()=>{ move('esquerda')});
+            document.querySelector("#direita").addEventListener("click",()=>{ move('direita')});
+            document.querySelector("#baixo").addEventListener("click",()=>{ move('baixo')});
+            document.querySelector("#acima").addEventListener("click",()=>{ move('acima')});
+            document.querySelector("#cor").addEventListener("click", ()=>{cor()});
+
+		</script>
+	</body>
+</html>

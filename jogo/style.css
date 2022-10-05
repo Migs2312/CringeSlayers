@@ -1,0 +1,98 @@
+.whole{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.fundo {
+     width: 80vw;
+     height: 40vw;
+     background-color: black;
+     text-align: center;
+     background-size:contain;
+	}
+.painel {
+     text-align: center;
+     width:10vw;
+     background-color: black;
+     height: 40vw;
+     border-left: solid white 2px;
+}
+.pontos{
+    position:relative;
+    left:0vw;
+    color: white;
+    font-size: larger;
+}
+.pontos1{
+    margin-top: 5px;
+    position:relative;
+    left:0vw;
+    color: white;
+    font-size: larger;
+}
+#div2 {
+    position: absolute; 
+    top: 5vw; 
+    left: 5vw;
+    width: 5vw; 
+    height: 5vw;
+    background-image: url("./c1.jpeg");
+    text-align: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#div1 {
+    position: absolute;
+    top: 15vw;
+    left: 15vw;
+    width: 5vw; 
+    height: 5vw; 
+    background-image: url("./ArmstrongPortrait.webp");
+    background-size: cover;
+    text-align: center;
+    border:2px white;
+    border-style:dotted;
+}
+.cumida{
+position: absolute;
+    top: 10vw;
+    left: 10vw; 
+    width: 5vw; 
+    height: 5vw; 
+    text-align: center;
+}
+.direct{
+    width:3vw;
+    height:3vw;
+    font-size: 2vw;
+    border: 2px black dashed;
+}
+.character{
+    width:90%;
+    height:3vw;
+    font-size: 0.8vw;
+    border: 2px black dashed;
+}
+.winner{
+    display:none;
+}
+#winner{
+    position: absolute;
+    left:27%;
+    font-size: 5vw;
+    color: white;
+}
+#loser{
+    position: absolute;
+    left:27%;
+    font-size: 5vw;
+    color: white;
+}
+#inst{
+    color:white;
+}
+.time1{
+    color:white;
+}
+#time{
+    color: white;
+}
