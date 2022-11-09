@@ -36,11 +36,6 @@
       "sizes": "128x128"
     },
     {
-      "src": "/apple-icon-114x114-seochecker-manifest-9109.png",
-      "type": "image/png",
-      "sizes": "114x114"
-    },
-    {
       "src": "image/icons/maskable_icon_x192.png",
       "type": "image/png",
       "sizes": "192x192"
