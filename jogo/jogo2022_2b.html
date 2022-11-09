@@ -351,6 +351,23 @@
 			const tempohtml = document.getElementById("time");
 			//Funções que são chamadas a cada 15 e 5 milisegundos
 			let n = setInterval("colisao()", 10);
+			document.addEventListener("keydown", (e)=>{
+				if(e.key=="ArrowLeft"){
+					move("esquerda")
+				}
+				if (e.key == "ArrowRight") {
+					move("direita")
+				}
+				if (e.key == "ArrowUp") {
+					move("acima")
+				}
+				if (e.key == "ArrowDown") {
+					move("baixo")
+				}
+				if (e.key== "0"){
+					cor()
+				}
+			})
 			document.querySelector("#start").addEventListener("click", ()=>{start()});
             document.querySelector("#acima").addEventListener("click", ()=>{move('acima')});
             document.querySelector("#esquerda").addEventListener("click",()=>{ move('esquerda')});
