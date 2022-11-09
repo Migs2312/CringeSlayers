@@ -2,7 +2,6 @@
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
     './jogo2022_2b.html',
-    './',
     './manifest.json'
 ];
 
