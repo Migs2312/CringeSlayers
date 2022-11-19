@@ -1,19 +1,22 @@
 .whole{
     display: flex;
     flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
 }
 .fundo {
      width: 80vw;
-     height: 40vw;
+     height: 95vh;
      background-color: black;
      text-align: center;
-     background-size:contain;
+     background-size:cover;
+     background-position: 0%;
 	}
 .painel {
      text-align: center;
-     width:10vw;
+     width:30vw;
      background-color: black;
-     height: 40vw;
+     height: 95vh;
      border-left: solid white 2px;
 }
 .pontos{
@@ -35,7 +38,7 @@
     left: 5vw;
     width: 5vw; 
     height: 5vw;
-    background-image: url("./c1.jpeg");
+    background-image: url("./image/c1.jpeg");
     text-align: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -43,10 +46,9 @@
 #div1 {
     position: absolute;
     top: 15vw;
-    left: 15vw;
+    left: 34vw;
     width: 5vw; 
     height: 5vw; 
-    background-image: url("./ArmstrongPortrait.webp");
     background-size: cover;
     text-align: center;
     border:2px white;
@@ -61,25 +63,35 @@ position: absolute;
     text-align: center;
 }
 .direct{
-    width:3vw;
-    height:3vw;
+    width:18vh;
+    height:18vh;
+    margin:2vh;
     font-size: 2vw;
     border: 2px black dashed;
 }
 .character{
-    width:90%;
-    height:3vw;
+    margin:2%;
+    width:20%;
+    height:5vw;
+    font-size: 0.8vw;
+    border: 2px black dashed;
+}
+#repeat{
+    margin:10%;
+    width:20%;
+    height:5vw;
+    font-size: 0.8vw;
+    border: 2px black dashed;
+}
+#norepeat{
+    margin:10%;
+    width:20%;
+    height:5vw;
     font-size: 0.8vw;
     border: 2px black dashed;
 }
 .winner{
     display:none;
-}
-#winner{
-    position: absolute;
-    left:27%;
-    font-size: 5vw;
-    color: white;
 }
 #loser{
     position: absolute;
@@ -90,9 +102,34 @@ position: absolute;
 #inst{
     color:white;
 }
+#inst2{
+    position: relative;
+    top:20%;
+    color:white;
+}
 .time1{
     color:white;
 }
 #time{
     color: white;
+}
+#records{
+    color: white;
+    position:relative;
+    top:10%;
+}
+#rec1{
+    color: white;
+    position:relative;
+    top:10%;
+}
+#rec2{
+    color: white;
+    position:relative;
+    top:10%;
+}
+#rec3{
+    color: white;
+    position:relative;
+    top:10%;
 }
