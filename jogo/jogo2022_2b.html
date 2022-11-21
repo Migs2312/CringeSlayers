@@ -298,10 +298,10 @@
 					document.querySelector("#start").className="winner";
 					document.querySelector("#inst").className="winner";
 					document.querySelector("#cor").className="winner";
-					document.querySelector("#records").className="";
-					document.querySelector("#rec1").className="";
-					document.querySelector("#rec2").className="";
-					document.querySelector("#rec3").className="";
+					document.querySelector("#records").className = "winner";
+					document.querySelector("#rec1").className = "winner";
+					document.querySelector("#rec2").className = "winner";
+					document.querySelector("#rec3").className = "winner";
 					div1.classList.remove("winner");
 					div2.classList.remove("winner");
 					end = setInterval("finish(end)",1000);
@@ -423,10 +423,6 @@
 					document.querySelector(".fundo").style.backgroundImage = "";
 					document.querySelector("#start").className="";
 					document.querySelector("#inst").className="";
-					document.querySelector("#records").className="";
-					document.querySelector("#rec1").className="";
-					document.querySelector("#rec2").className="";
-					document.querySelector("#rec3").className="";
 					document.querySelector("#cor").className="character";
 					document.querySelector("#repeat").className="winner";
 					document.querySelector("#norepeat").className="winner";
